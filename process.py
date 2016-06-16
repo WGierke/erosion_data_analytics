@@ -14,7 +14,10 @@ def transform(df: pd.DataFrame) -> pd.DataFrame:
 	df = encode_onehot(df, cols=['Rock type', 'Climate zone main'])
 	return df
 
-if __name__ == '__main__':
+def get_processed_data() -> pd.DataFrame:
 	data = read_data()
 	data = transform(data)
-	print(data)
+	return data
+
+if __name__ == '__main__':
+	print(get_processed_data())
