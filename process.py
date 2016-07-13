@@ -30,10 +30,11 @@ def transform(df: pd.DataFrame) -> pd.DataFrame:
     df = encode_onehot(df, cols=['Rock type', 'Climate zone main'])
     return df
 
-def get_processed_data() -> pd.DataFrame:
+def get_processed_data(transform=True) -> pd.DataFrame:
     data = read_data()
     data = clean(data)
-    data = transform(data)
+    if transform:
+        data = transform(data)
     return data
 
 if __name__ == '__main__':
