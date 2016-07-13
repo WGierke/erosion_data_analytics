@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from transformation import encode_onehot
 
+
 def read_data() -> pd.DataFrame:
     """Read DataFrame"""
     file_path_full = os.getcwd() + '/data/processed.csv'
